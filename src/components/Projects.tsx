@@ -12,7 +12,7 @@ const card_visible_offset = 50;
 
 const Projects = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
-    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const cardsRef = useRef<(HTMLDivElement | null)[]>(new Array(featured_projects.length).fill(null));
 
     useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +22,7 @@ const Projects = () => {
         if (!card) return;
 
         const cardTop = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
+        //const windowHeight = window.innerHeight;
         const stickyTop = 96 + index * card_visible_offset; 
 
         // When card reaches its sticky position
@@ -52,7 +52,7 @@ const Projects = () => {
           {featured_projects.map((project, index) => (
             <div
               key={project.id}
-              ref={(el) => (cardsRef.current[index] = el)}
+              ref={(el) => {cardsRef.current[index] = el;}}
               className="sticky mb-[-20px] last:mb-0"
               style={{
                 top: `${96 + index * card_visible_offset}px`,
