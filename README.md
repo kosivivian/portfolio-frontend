@@ -75,4 +75,6 @@ export default defineConfig([
 =======
 # portfolio-project
 >>>>>>> 16c33c3d3ee542bcf5c7405dbd011699f180719b
-"# portfolio-frontend" 
+"# portfolio-frontend"
+Full Name = Nebolisa Kosisochukwu Vivian
+Matric Number = 22120613016 
