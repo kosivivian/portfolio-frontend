@@ -1,14 +1,14 @@
 
-import type {ReactNode }  from "react";
+import type {ReactNode, ButtonHTMLAttributes }  from "react";
 type ButtonVariant = "primary" | "secondary" | "third";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: ButtonVariant;
 }
 
 
-const Button = ({children, variant = "primary"}: ButtonProps) => {
+const Button = ({children, variant = "primary", className="", ...props}: ButtonProps) => {
 
     const baseStyle = "py-1.5 px-3 text-sm rounded-full font-sm cursor-pointer transition duration-200";
 
@@ -19,7 +19,7 @@ const Button = ({children, variant = "primary"}: ButtonProps) => {
         "bg-[#BE99F9] text-white border border-[#BE99F9] hover:bg-[#914DFF] hover:border-neutral-600 hover:scale-[1.02] transition-all duration-300 ease-in-out whitespace-nowrap",
     };
   return (
-    <button className={`${baseStyle} ${variants[variant]}`}>
+    <button className={`${baseStyle} ${variants[variant]} ${className}`} {...props}>
         {children}
     </button>
   );

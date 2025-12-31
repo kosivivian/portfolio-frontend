@@ -26,7 +26,7 @@ const Aboutsection = () => {
                 <div className="mt-6 grid md:grid-cols-4 lg:grid-cols-2 gap-4">
                 {stats.map((stat, index) => ( <div key={index} className="border items-center rounded-lg bg-[#D9D9D9] p-5 flex flex-col lg:items-start animate-slide-in-left" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
                         <span className={headingStyles.H2b + " hover:text-[#C4FF4D] duration-300 opacity-0 animate-fade-in"}>
-                            <CountUp end={stat.value} />+
+                            <CountUp end={Number(stat.value)} />+
                         </span>
                         <p className={headingStyles.H4b + "lg:ml-4"}>{stat.label}</p>
                     </div>

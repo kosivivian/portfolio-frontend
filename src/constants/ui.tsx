@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
-function CountUp({ end, duration = 1200 }) {
+interface CountUpProps {
+  end: number;
+  duration?: number;
+}
+
+function CountUp({ end, duration = 1200 }: CountUpProps) {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
 
   useEffect(() => {
@@ -11,10 +16,9 @@ function CountUp({ end, duration = 1200 }) {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
 
-          let start = 0;
           const startTime = performance.now();
 
-          const animate = (time) => {
+          const animate = (time: number) => {
             const progress = Math.min((time - startTime) / duration, 1);
             const value = Math.floor(progress * end);
             setCount(value);
