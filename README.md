@@ -74,5 +74,6 @@ export default defineConfig([
 ```
 =======
 # portfolio-project
-Full Name = Nebolisa Kosisochukwu Vivian
+Full Name = Nebolisa Kosisochukwu Vivian.
+
 Matric Number = 22120613016 
