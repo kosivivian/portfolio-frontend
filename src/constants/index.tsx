@@ -45,7 +45,7 @@ export const featured_projects: Project[] = [
     image: "https://images.unsplash.com/photo-1738574137970-bd59200dc6e0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aWdibyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
     lessons:"",
     techStack: ["OrpheusTTS", "Python", "PyTorch"],
-    githubLink: "",
+    githubLink: "https://huggingface.co/kosinebolisa/igbo-tts-model-2",
     liveLink: "",
     demo_video: ""
   },
