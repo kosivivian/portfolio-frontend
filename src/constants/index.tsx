@@ -84,7 +84,7 @@ export const featured_projects: Project[] = [
     techStack: ["FAISS", "LangChain", "Streamlit", "Groq LLM"],
     githubLink: "https://github.com/kosivivian/dermatology_naive_rag_",
     liveLink: "",
-    demo_video: ""
+    demo_video: "https://youtu.be/fDbByQda2P8"
   },
     {
     id: 4,

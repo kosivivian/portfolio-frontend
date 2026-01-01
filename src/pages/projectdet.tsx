@@ -172,7 +172,15 @@ const projectdet = () => {
                                     <AlertCircle className="w-6 h-6 text-[#BE99F9]" />
                                     <h2 className={headingStyles.H2b}>Problem Solved</h2>
                                 </div>
-                                <p className={headingStyles.H4b + " mb-6"}>{project.problem_solved}</p>
+                                  {project.lessons?.trim() ? (
+                                    <p className={headingStyles.H4b + " mb-6"}>{project.problem_solved}</p>
+                                
+                            ) : (
+                                <p className="m-8 text-sm italic text-gray-500">
+                                No problem statement inserted yet.
+                                </p>
+                            )}
+                                
                             </div>
                         </div>
                         </section>
