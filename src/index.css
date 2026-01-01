@@ -1,16 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --animate-marquee: marquee 30s linear infinite;
-  @keyframes marquee {
-    from {
-      transform: translateX(0%);
+@layer components {
+  .skills-scroll {
+      animation: scroll 20s linear infinite;
     }
-    to {
-      transform: translateX(-100%);
+  
+    .skills-scroll:hover {
+      animation-play-state: paused;
     }
-  }
+  
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+  
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+        .horizontal-scroll::-webkit-scrollbar {
+          height: 8px;
+        }
+    
+        .horizontal-scroll::-webkit-scrollbar-track {
+          @apply bg-[#D9D9D9] rounded-full;
+        }
+    
+        .horizontal-scroll::-webkit-scrollbar-thumb {
+          @apply bg-[#C4FF4D] rounded-full;
+        }
 }
 
 /*:root {
@@ -19,6 +39,10 @@
 }*/
 
 @layer base {
+  html {
+      scroll-behavior: smooth;
+    }
+
 :root {
   font-family: "Poppins", sans-serif;
   color-scheme: light;
@@ -47,3 +71,4 @@
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
 }
+

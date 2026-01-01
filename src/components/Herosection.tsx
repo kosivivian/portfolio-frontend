@@ -33,9 +33,9 @@ const Herosection = () => {
 
         {/*Skills Marquee*/}
         <div className="w-screen z-40 bg-[#C4FF4D] py-4 mt-0 overflow-hidden whitespace-nowrap border-y border-black">
-            <div className="flex w-max animate-marquee">
-            <div className="flex items-center space-x-12 px-6">
-                {skills.map((skill, index) => (
+            <div className="flex w-max skills-scroll">
+            <div className="flex items-center space-x-12">
+                {[...skills, ...skills, ...skills, ...skills].map((skill, index) => (
             <div key={index} className="flex items-center space-x-12">
                 <span className=" font-space text-xl lg:text-2xl font-medium tracking-normal leading-tight text-black whitespace-nowrap uppercase" >{skill}</span>
                 <span> <img src={icon} alt="icon"/></span>
@@ -45,16 +45,7 @@ const Herosection = () => {
            
             </div>
 
-        <div className="flex items-center space-x-12 px-6">
-                {skills.map((skill, index) => (
-            <div key={`dup-${index}`} className="flex items-center space-x-12">
-                <span className="font-space text-xl lg:text-2xl font-medium tracking-normal leading-tight text-black whitespace-nowrap uppercase">{skill}</span>
-                <span> <img src={icon} alt="icon"/></span>
-            </div>
         
-                ))}
-    
-        </div>
         </div>
         </div>
           

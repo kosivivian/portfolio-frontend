@@ -65,6 +65,16 @@ const projectdet = () => {
     const { slug } = useParams<{ slug: string }>();
     const project = featured_projects.find((p) => p.slug === slug);
 
+    const getEmbedUrl = (url: string) => {
+        if (!url) return '';
+        // Extracts the video ID from standard or short YouTube links
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        const videoId = (match && match[2].length === 11) ? match[2] : null;
+        
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+    };
+
     if (!project) {
         return (
             <div className="min-h-screen bg-white flex items-center justify-center">
@@ -139,16 +149,14 @@ const projectdet = () => {
                         <div className="relative">
                             {project.demo_video ? (
                                 <div className="aspect-video rounded-2xl overflow-hidden bg-muted shadow-2xl">
-                                    <video
-                                        src={project.demo_video}
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        className="w-full h-full object-cover"
-                                    >
-                                        Your browser does not support the video tag.
-                                    </video>
+                                    <iframe
+                                        src={getEmbedUrl(project.demo_video)}
+                                        title="Project demo video"
+                                        allow="autoplay; encrypted-media; picture-in-picture"
+                                        allowFullScreen
+                                
+                                        className="w-full h-full"
+                                    />
                                     </div>
                                 ) : (
                                     <div className="aspect-video rounded-2xl overflow-hidden bg-muted shadow-2xl">
@@ -172,8 +180,8 @@ const projectdet = () => {
                                     <AlertCircle className="w-6 h-6 text-[#BE99F9]" />
                                     <h2 className={headingStyles.H2b}>Problem Solved</h2>
                                 </div>
-                                  {project.lessons?.trim() ? (
-                                    <p className={headingStyles.H4b + " mb-6"}>{project.problem_solved}</p>
+                                  {project.problem_solved?.trim() ? (
+                                    <p className={`${headingStyles.H4b} mb-6`}>{project.problem_solved}</p>
                                 
                             ) : (
                                 <p className="m-8 text-sm italic text-gray-500">

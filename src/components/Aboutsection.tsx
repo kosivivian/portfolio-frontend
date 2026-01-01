@@ -10,7 +10,9 @@ const Aboutsection = () => {
     <>
         <section id="about" className= "py-20 lg:py-32 pt-10 lg:pt-15 flex flex-col ">
             <div className="container mx-auto px-6">
-            <span className={headingStyles.H2b} >About Me</span>
+                <div className='text-center'>
+            <span className={headingStyles.H2b } >About Me</span>
+            </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* left hand side - text */}
             <div className="order-2 lg:order-1">
