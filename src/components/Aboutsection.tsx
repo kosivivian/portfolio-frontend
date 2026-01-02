@@ -2,6 +2,7 @@
 import { headingStyles } from '../constants/typography'
 import { stats } from '../constants'
 import CountUp from '../constants/ui'
+import aboutme from '../assets/kosi-aboutme.jpg'
 
 const Aboutsection = () => {
 
@@ -21,7 +22,7 @@ const Aboutsection = () => {
                 <h1 className=" text-[24px] md:text-[28px] lg:text-[36px] text-black leading-[-0.9]  mt-6 mb-4 animate-slide-in-left" style={{ animationDelay: '0.1s'}}>Transforming Ideas into <br /> <span className='text-[#BE99F9] '>Intelligent Solutions</span></h1>
 
                 <p className={headingStyles.H4b + " mt-6 animate-slide-in-left"} style={{ animationDelay: '0.2s' }}>
-                    I'm a passionate Machine Learning Engineer with expertise in building end-to-end AI solutions. From data analysis to model deployment, I help businesses leverage the power of artificial intelligence to solve complex problems and drive innovation. My approach combines technical excellence with a deep understanding of business needs.
+                    I'm a passionate AI Engineer with expertise in leveraging AI to solve real-world needs. From data analysis to model deployment to full-stack systems, I help businesses leverage the power of artificial intelligence to solve complex problems and drive innovation. My approach combines technical excellence with a deep understanding of business needs.
                 </p>
 
                 {/*Stats*/}
@@ -43,7 +44,7 @@ const Aboutsection = () => {
             {/* right hand side - image */ }
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                 <div className="relative animate-slide-in-right">
-                    <img src="" alt="about me image" className="">
+                    <img className="relative w-80 h-96 md:w-96 md:h-[500px] mt-8 rounded-3xl shadow-2xl" src={aboutme} alt="about me image" >
                     </img>
                 </div>
             </div>
